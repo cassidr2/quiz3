@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700&display=swap');
+:root{
+    --main-color:#05a082;
+    --text-color:#fff;
+    --dark-color:#000;
+}
+*{
+    box-sizing:border-box;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding:0;
+}
+header{
+    display:grid;
+    grid-auto-flow:column;
+    width:100%;
+    text-align:center;
+    background: rgba(0,0,0,0.2);
+    position: absolute;
+    font-size: 30px;
+}
+.logo{
+    font-size:2rem;
+    font-weight:700;
+    color:white;
+}
+/* units - px, %, vw, em (parent), rem (root) */
+
+nav ul{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    /* display: flex
+    flex-wrap: wrap; */
+}
+nav ul li{
+    flex: 1;
+    margin: 0 .4rem;
+    position: relative;
+}
+nav ul li a{
+    display: block;
+    text-align: center;
+    text-decoration: none !important;
+    padding: 1.2rem 1rem;
+    text-transform: uppercase;
+    font-weight:600;
+    color: var(--text-color) !important;
+
+}
+.banner{
+    background: #3f51b5;
+    height: 100vh;
+}
+/* dropdown */
+nav ul li ul{
+    position: absolute;
+    background: var(--text-color);
+    width: 100%;
+    top: 100%;
+    display:none;
+}
+nav ul li ul li a{
+    color: var(--dark-color) !important;
+}
+nav ul li:hover ul{
+    display:block;
+}
+.label, #toggle{
+    display:none;
+}
+@media(max-width:700px){
+    nav.ul{
+        display:none !important;
+    }
+    .label{
+        display:block !important;
+        cursor: pointer;
+    }
+    .fa-bars{
+        font-size: 2rem;
+        position: absolute;
+        top:1rem;
+        right:1rem;
+        color:var(--text-color);
+        z-index: 1;
+    }
+    #toggle:checked+nav{
+        display: block !important;
+    }
+}
+
+/* CSS3 Hover effects */
+nav.menu ul li a:hover{
+    color: var(--text-color) !important;
+}
+nav.menu ul li a{
+    position: relative;
+}
+nav.menu ul li a:after{
+    position: absolute;
+    left:0;
+    bottom:0;
+    right:0;
+    margin: auto;
+    width: 0;
+    content:'.';
+    color:transparent;
+    background: var(--text-color) !important;
+    height:3px;
+}
+nav.menu ul li a:hover:after{
+    width: 100%;
+}
+nav ul li a, nav ul li a:after, nav ul li a:before{
+    transition:all .5s;
+}

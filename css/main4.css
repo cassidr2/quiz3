@@ -1,0 +1,18 @@
+:root{
+    --main-color: tomato;
+    --text-color: #fff;
+}
+.box{
+    width: 500%;
+    height: 200px;
+    background: var(--main-color);
+    margin: 10px;
+    position: relative;
+}
+/* Gradient - linear, radial */
+.a{
+    background: linear-gradient(to right,green 60%, yellow);
+}
+.b{
+    background: radial-gradient (red, black);
+}
